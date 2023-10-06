@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <p style={{textAlign: 'center', fontFamily: 'MR'}}>Home</p>
+      <div style={{fontFamily: 'MR', textAlign: 'center', padding:'50px'}}>Home</div>
     </>
   )
 }

@@ -1,0 +1,62 @@
+/* hamburger menu */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    gap:5px;
+    cursor: pointer;
+    width: 40px;
+    z-index: 6;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger input{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #E9E5D7;
+    border-radius: 3px;
+    transition: width 0.3s, rotate 0.3s, translate 0.3s, background-color 0.3s, opacity 0.3s,transform-origin 0.3s;
+}
+
+.hamburger input{
+    appearance: none;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger:has(input:checked)::before{
+    rotate:45deg;
+    transform-origin: left;
+    width: calc(19px*1.42);
+    translate: 0 calc(3px/-2);
+}
+.hamburger:has(input:checked)::after{
+    rotate:-45deg;
+    transform-origin: left;
+    width: calc(19px*1.4);
+    translate: 0 calc(3px/2);
+}
+
+
+@media screen and (max-width:600px) {
+    .hamburger{
+        display: flex;
+    }
+    .menu{
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.2s ease;
+        padding-top: 0px;
+    }
+    .hamburger:has(input:checked) ~ .menu{
+        padding-top: 30px;
+        max-height: 130px;
+        opacity: 1;
+    }
+}
