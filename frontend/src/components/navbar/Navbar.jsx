@@ -25,7 +25,7 @@ const[open, setOpen]=useState(false);
                     <input type="checkbox" onClick={()=>setOpen(!open)}></input>
                 </label>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={4}>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 6 }} sx={{ display: 'flex', alignItems: 'center' }} className={open?styles.menuOpen:styles.menuClose}>
                     <Link href="#" className={styles.navlink}>Movies</Link>
                     <Link href="#" className={styles.navlink}>Sports</Link>
