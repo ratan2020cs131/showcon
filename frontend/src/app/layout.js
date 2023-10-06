@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'ShowCon',
+  title: 'Showcon',
   description: 'Ease your ticket bookings',
 }
 
