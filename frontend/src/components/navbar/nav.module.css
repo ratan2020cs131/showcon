@@ -1,22 +1,25 @@
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding:10px 20px;
+    padding: 10px 20px;
     max-width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0.2px 0.6px #F55139;
 }
-.navlink{
+
+.navlink {
     font-family: "MSB";
     text-align: center;
     position: relative;
     padding-bottom: 5px;
-    color:#E9E5D7;
+    color: #E9E5D7;
 }
 
-.navlink::after{
+.navlink::after {
     content: "";
     background-color: #F55139;
-    height:2px;
+    height: 2px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -27,6 +30,78 @@
     transition: transform 0.2s linear;
 }
 
-.navlink:hover::after{
+.navlink:hover::after {
     transform: scaleX(1);
+}
+
+
+/* hamburger menu */
+.drawer{
+    display:none;
+}
+.hamburger{
+    display: none;
+    flex-direction: column;
+    gap:5px;
+    cursor: pointer;
+    width: max-content;
+    z-index: 6;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger input{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #E9E5D7;
+    border-radius: 3px;
+    transition: width 0.3s, rotate 0.3s, translate 0.3s, background-color 0.3s, opacity 0.3s,transform-origin 0.3s;
+}
+
+.hamburger input{
+    appearance: none;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger:has(input:checked)::before{
+    rotate:45deg;
+    transform-origin: left;
+    width: calc(19px*1.42);
+    translate: 0 calc(3px/-2);
+}
+.hamburger:has(input:checked)::after{
+    rotate:-45deg;
+    transform-origin: left;
+    width: calc(19px*1.4);
+    translate: 0 calc(3px/2);
+}
+
+
+@media screen and (max-width:450px) {
+    .navbar {
+        background-color: #1E1F22;
+        transition: max-height 0.3s ease;
+        max-height: fit-content;
+    }
+    .hamburger{
+        display: flex;
+    }
+    .drawer{
+        display:flex;
+        justify-content: flex-end;
+    }
+    .menuOpen{
+        display: flex;
+        margin-top:30px;
+    }
+    .menuClose{
+        display: none;
+    }
 }
