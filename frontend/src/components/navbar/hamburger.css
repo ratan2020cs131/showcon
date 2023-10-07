@@ -2,6 +2,7 @@
 .hamburger{
     display: none;
     flex-direction: column;
+    align-items: center;
     gap:5px;
     cursor: pointer;
     width: 40px;
@@ -50,13 +51,14 @@
     }
     .menu{
         max-height: 0;
+        overflow: hidden;
         opacity: 0;
         transition: all 0.2s ease;
         padding-top: 0px;
     }
     .hamburger:has(input:checked) ~ .menu{
         padding-top: 30px;
-        max-height: 130px;
+        max-height:max-content;
         opacity: 1;
     }
 }
