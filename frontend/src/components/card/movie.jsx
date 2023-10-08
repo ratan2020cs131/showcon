@@ -21,18 +21,19 @@ const MovieCard = ({ data }) => {
                 <CardContent sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '5px 10px',
+                    padding: '10px 10px',
                     backgroundColor: { xs: '#1E1F22', sm: '#E9E5D7' },
                     color: { sm: '#1E1F22', xs: '#E9E5D7' },
                     justifyContent: 'space-between'
                 }}>
-                    <Typography gutterBottom component="span">
+                    <Typography component="span">
                         {data.title}
                     </Typography>
-                    <Typography gutterBottom component="span">
-                        <span aria-label="add to favorites" onClick={() => setFavorite(!favorite)}>
-                            {favorite ? <CustomFavoriteIcon color='#F55139' /> : <CustomFavoriteBorderIcon />}
-                        </span>
+                    <Typography component="span" onClick={() => setFavorite(!favorite)} sx={{
+                        display:'flex',
+                        alignItems: 'center'
+                    }}>
+                        {favorite ? <CustomFavoriteIcon /> : <CustomFavoriteBorderIcon />}
                     </Typography>
                 </CardContent>
             </CardActionArea>
