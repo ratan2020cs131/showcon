@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
 const CustomizedButton = styled(Button)(
-    ({ bdrcolor, bgcolor, tcolor, }) => ({
+    ({ bdrcolor, bgcolor, tcolor, bradius}) => ({
         "&:hover": {
             backgroundColor: bgcolor ? bgcolor : "#F55139",
             color: tcolor ? tcolor : "#E9E5D7",
@@ -12,6 +12,7 @@ const CustomizedButton = styled(Button)(
         backgroundColor: bgcolor ? bgcolor : "#1E1F22",
         fontFamily:"MSB",
         padding:"5px 10px",
+        borderRadius:bradius? bradius:'4px'
     })
 );
 

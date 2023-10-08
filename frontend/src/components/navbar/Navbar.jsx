@@ -21,7 +21,7 @@ const Navbar = () => {
                     height={50}
                 ></Image>
             </Grid>
-            <label item xs={1} className="hamburger">
+            <label xs={1} className="hamburger">
                 <input type="checkbox" onClick={() => setOpen(!open)}></input>
             </label>
             <Grid item xs={12} sm={6} className="menu"
